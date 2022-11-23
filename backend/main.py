@@ -16,16 +16,13 @@ templates = Jinja2Templates(directory=".")
 
 
 
-# @app.get("/")
-# async def root():
-#     return {"message": "Hello World"}
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 
 @app.get("/data/{dtype}")
 async def data(dtype):
-    connection = sqlite3.connect("test3.db")
+    connection = sqlite3.connect("asl_img.db")
     cursor = connection.cursor()
     data = None
     if dtype == "test":
@@ -47,15 +44,23 @@ def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post('/', response_class = HTMLResponse)
-def post_form(request: Request, file: UploadFile):
+# @app.post('/', response_class = HTMLResponse)
+# def post_form(request: Request, file: UploadFile):
+    
+
+@app.post('/ASL')
+def image_to_text(request: Request, file: UploadFile):
     print(file.filename)
     print(file.content_type)
     print(file.file)
+    # model 
+    # predection = model
+    
+    pred = file.filename
     
     
     
-    return templates.TemplateResponse("index.html", {"request": request})
+    return {"pred": pred}
 
 
 if __name__ == '__main__':
