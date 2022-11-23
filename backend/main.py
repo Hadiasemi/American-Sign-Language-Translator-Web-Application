@@ -1,18 +1,25 @@
 import uvicorn
-from fastapi import FastAPI
 import sqlite3
 import pandas as pd
+from fastapi import FastAPI, Request, Form, Depends, UploadFile, File, HTTPException
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from schemas import AwesomeForm
 
 
 
 app = FastAPI()
 #database init
+templates = Jinja2Templates(directory=".")
 
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+
+# @app.get("/")
+# async def root():
+#     return {"message": "Hello World"}
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 
@@ -23,8 +30,10 @@ async def data(dtype):
     data = None
     if dtype == "test":
        data = cursor.execute("select * from ImageTest").fetchall()
-    else:
+    elif dtype == "train":
         data = cursor.execute("select * from ImageTrain").fetchall()
+    else:
+        raise HTTPException(status_code=404, detail="Item not found")
 
     df = pd.DataFrame( data, columns=["Idx", "Label", "Pics"])
     df = df[df.columns[1:]]
@@ -33,28 +42,21 @@ async def data(dtype):
     return df.to_json()
 
 
-# @app.get("/data")
-# async def data():
-#     connection = sqlite3.connect("test3.db")
-#     cursor = connection.cursor()
-#     data = None
-
-#     data = cursor.execute("select * from Image").fetchall()
-#     # print(data)
+@app.get('/', response_class=HTMLResponse)
+def root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
-#     df = pd.DataFrame( data, columns=["Idx", "Label", "Pics"])
-#     df = df[df.columns[1:]]
-#     # print(df)
+@app.post('/', response_class = HTMLResponse)
+def post_form(request: Request, file: UploadFile):
+    print(file.filename)
+    print(file.content_type)
+    print(file.file)
     
-#     return df.to_json()
+    
+    
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
-
-
-# @app.get("/")
-
-"""
-    1. ML to DB -> get{data[training]} -> SELECT * from DB
-    1. ML to DB -> get{data[testting]} -> SELECT * from DB
-"""
+if __name__ == '__main__':
+    uvicorn.run(app)
