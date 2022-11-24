@@ -1,17 +1,52 @@
 <html>
-    <head>
-        <title>Awesome Form</title>
-        <!-- <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet"> -->
-    </head>
-    <body>
-        <h1>Super Realistic Form</h1>
-        <form method="POST" action = "/ASL" enctype="multipart/form-data">
-            <!-- <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br> -->
-            <input type="file" name="file"><br>
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+  <head>
+    <title>Awesome Form</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/style.css.map') }}"
+    />
+  </head>
+  <body>
+    <!-- <form method="POST" action="/ASL" enctype="multipart/form-data">
+      <input type="file" name="file" /><br />
+      <input type="submit" value="Submit" />
+    </form> -->
+    <div class="outer">
+      <div class="outer--header">
+        <h1>Sign Language Translator</h1>
+      </div>
+      <div class="outer--body">
+        <div class="box">
+          <div class="area"></div>
+        </div>
+      </div>
+      <div class="outer--footer">Footer</div>
+    </div>
+  </body>
 </html>
