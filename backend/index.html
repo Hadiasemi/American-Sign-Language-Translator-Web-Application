@@ -1,17 +1,121 @@
 <html>
-    <head>
-        <title>Awesome Form</title>
-        <!-- <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet"> -->
-    </head>
-    <body>
-        <h1>Super Realistic Form</h1>
-        <form method="POST" action = "/ASL" enctype="multipart/form-data">
-            <!-- <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br> -->
-            <input type="file" name="file"><br>
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+  <head>
+    <title>ASL</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/style.css.map') }}"
+    />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', path='js/index.js') }}"
+    ></script>
+  </head>
+  <body>
+    <!-- <form method="POST" action="/ASL" enctype="multipart/form-data">
+      <input type="file" name="file" /><br />
+      <input type="submit" value="Submit" />
+    </form> -->
+
+    <form>
+      <input
+        type="file"
+        class="file-dialog"
+        accept="image/png, image/gif, image/jpeg"
+      />
+    </form>
+    <div class="outer">
+      <div class="outer--header">
+        <img
+          class="logo"
+          src="{{ url_for('static', path='images/asl.png') }}"
+        />
+        <h1>American Sign Language Translator</h1>
+      </div>
+      <div class="outer--body">
+        <div class="box">
+          <!-- UPLOAD SECTION  -->
+          <div class="area area--left">
+            <div id="uploadBtn" class="header-section">
+              <svg width="81.823" height="61.434" viewBox="0 0 81.823 71.434">
+                <g id="Folder" transform="translate(-531.896 -391)">
+                  <g id="folder-blank" transform="translate(531.989 391)">
+                    <g>
+                      <path
+                        d="M81.638,49.858V95.78a7.656,7.656,0,0,1-7.654,7.654H7.654A7.656,7.656,0,0,1,0,95.78V39.654A7.656,7.656,0,0,1,7.654,32H33.166l10.2,10.2H73.985A7.656,7.656,0,0,1,81.638,49.858Z"
+                        transform="translate(0 -32)"
+                        fill="#3b49b5"
+                      />
+                    </g>
+                  </g>
+                  <g id="Papers" transform="translate(-2 3)">
+                    <rect
+                      width="43"
+                      height="57"
+                      rx="2"
+                      transform="matrix(0.998, -0.07, 0.07, 0.998, 538.872, 398.786)"
+                      fill="#d5d5d5"
+                    />
+                    <rect
+                      width="43"
+                      height="57"
+                      rx="2"
+                      transform="translate(554.329 396.131) rotate(3)"
+                      fill="#ebebeb"
+                    />
+                    <rect
+                      width="43"
+                      height="57"
+                      rx="2"
+                      transform="matrix(0.995, -0.105, 0.105, 0.995, 562.946, 400.62)"
+                      fill="#fff"
+                    />
+                  </g>
+                  <rect
+                    width="81.823"
+                    height="55.141"
+                    rx="8"
+                    transform="translate(531.896 407.151)"
+                    fill="#4c5ff9"
+                  />
+                </g>
+              </svg>
+              <div class="text">Browse File</div>
+            </div>
+            <!-- Conditional Text/Image -->
+            <div class="image-area">
+              <div class="area-text">
+                Upload your ASL image here to get the English alphabet on the
+                right side and to see your uploaded image
+              </div>
+            </div>
+          </div>
+          <!-- BUTTON -->
+          <button class="translate-button" id="translate">Translate</button>
+          <!-- OUTPUT SECTION -->
+          <div class="area area--right">
+            <div class="header-section">English Letter</div>
+            <!-- Conditional Text -->
+            <div class="letter-area">
+              <div class="area-text">
+                Only after you submit the ASL image on the left will the letter
+                display here
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="outer--footer">
+        <div class="heart-wrap">
+          Coded with <span class="heart">❤</span> in CSC 570
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

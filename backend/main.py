@@ -8,11 +8,27 @@ from fastapi.templating import Jinja2Templates
 import keras
 import PIL.Image as Image
 import base64
-
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import Body
 
 
 
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:8000"
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 #database init
 templates = Jinja2Templates(directory=".")
 
@@ -68,6 +84,14 @@ async def image_to_text(request: Request, file: UploadFile = File(...)):
     print(file_content)
     keras.models.load_model("./asl_cnn_saved_model")
 
+@app.post('/translate')
+async def upload_file(file: UploadFile = File(...)):
+    print("call reached !!!!!")
+    print(file)
+    return {'text': 'A'}
 
+async def main(request: Request): 
+   
+    return ''
 if __name__ == '__main__':
     uvicorn.run(app)
