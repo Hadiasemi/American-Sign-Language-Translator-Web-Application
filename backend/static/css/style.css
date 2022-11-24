@@ -52,7 +52,7 @@ body {
 }
 .outer--body {
   font-size: 50%;
-  height: calc(100% - 100px - 100px);
+  height: calc(100% - 50px - 100px);
 }
 .outer--body .box {
   background: white;
@@ -140,5 +140,17 @@ body {
 }
 .outer--footer {
   width: 100%;
-  height: 100px;
+  height: 50px;
+}
+.outer--footer .heart-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.outer--footer .heart {
+  color: #e25555;
+  font-size: 20px;
+  margin: 0 5px;
 }/*# sourceMappingURL=style.css.map */
