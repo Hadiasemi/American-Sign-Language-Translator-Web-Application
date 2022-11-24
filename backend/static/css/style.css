@@ -90,7 +90,7 @@ body {
   padding: 40px;
 }
 .outer--body .box .area .area-text {
-  padding: 50px;
+  padding: 30px 40px;
   font-size: 20px;
   font-weight: 500;
   line-height: 2rem;
@@ -121,6 +121,11 @@ body {
 .outer--body .box .area--left .header-section .text {
   margin-left: 20px;
 }
+.outer--body .box .area--left .uploaded-image {
+  max-width: 300px;
+  max-height: 200px;
+  margin-top: 20px;
+}
 .outer--body .box .area--right {
   border: 2px dashed #c5e2cd;
   background: #f4fbf5;
@@ -138,6 +143,14 @@ body {
   color: #549869;
   text-transform: capitalize;
 }
+.outer--body .box .area--right .output-letter {
+  padding: 60px;
+  padding: 60px;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 80px;
+  color: rgb(68, 128, 0);
+}
 .outer--footer {
   width: 100%;
   height: 50px;
@@ -153,4 +166,8 @@ body {
   color: #e25555;
   font-size: 20px;
   margin: 0 5px;
+}
+
+form {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

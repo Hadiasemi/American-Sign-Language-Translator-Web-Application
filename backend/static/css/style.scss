@@ -95,14 +95,13 @@ body {
         padding: 40px;
 
         .area-text {
-          padding: 50px;
+          padding: 30px 40px;
           font-size: 20px;
           font-weight: 500;
           line-height: 2rem;
           text-align: center;
           color: #636c80;
         }
-
         &--left {
           border: 2px dashed #c5d1e2;
           background: #f4f8fb;
@@ -128,6 +127,11 @@ body {
               margin-left: 20px;
             }
           }
+          .uploaded-image {
+            max-width: 300px;
+            max-height: 200px;
+            margin-top: 20px;
+          }
         }
         &--right {
           border: 2px dashed #c5e2cd;
@@ -146,6 +150,14 @@ body {
             align-items: center;
             color: #549869;
             text-transform: capitalize;
+          }
+          .output-letter {
+            padding: 60px;
+            padding: 60px;
+            font-size: 100px;
+            font-weight: 700;
+            line-height: 80px;
+            color: rgb(68, 128, 0);
           }
         }
       }
@@ -167,4 +179,8 @@ body {
       margin: 0 5px;
     }
   }
+}
+
+form {
+  display: none;
 }

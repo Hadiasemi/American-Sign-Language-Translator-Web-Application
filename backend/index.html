@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Awesome Form</title>
+    <title>ASL</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"></script>
     <link
@@ -12,12 +12,24 @@
       rel="stylesheet"
       href="{{ url_for('static', path='css/style.css.map') }}"
     />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', path='js/index.js') }}"
+    ></script>
   </head>
   <body>
     <!-- <form method="POST" action="/ASL" enctype="multipart/form-data">
       <input type="file" name="file" /><br />
       <input type="submit" value="Submit" />
     </form> -->
+
+    <form>
+      <input
+        type="file"
+        class="file-dialog"
+        accept="image/png, image/gif, image/jpeg"
+      />
+    </form>
     <div class="outer">
       <div class="outer--header">
         <img
@@ -30,7 +42,7 @@
         <div class="box">
           <!-- UPLOAD SECTION  -->
           <div class="area area--left">
-            <div class="header-section">
+            <div id="uploadBtn" class="header-section">
               <svg width="81.823" height="61.434" viewBox="0 0 81.823 71.434">
                 <g id="Folder" transform="translate(-531.896 -391)">
                   <g id="folder-blank" transform="translate(531.989 391)">
@@ -77,20 +89,24 @@
               <div class="text">Browse File</div>
             </div>
             <!-- Conditional Text/Image -->
-            <div class="area-text">
-              Upload your ASL image here to get the English alphabet on the
-              right side and to see your uploaded image
+            <div class="image-area">
+              <div class="area-text">
+                Upload your ASL image here to get the English alphabet on the
+                right side and to see your uploaded image
+              </div>
             </div>
           </div>
           <!-- BUTTON -->
-          <button class="translate-button">Translate</button>
+          <button class="translate-button" id="translate">Translate</button>
           <!-- OUTPUT SECTION -->
           <div class="area area--right">
             <div class="header-section">English Letter</div>
             <!-- Conditional Text -->
-            <div class="area-text">
-              Only after you submit the ASL image on the left will the letter
-              display here
+            <div class="letter-area">
+              <div class="area-text">
+                Only after you submit the ASL image on the left will the letter
+                display here
+              </div>
             </div>
           </div>
         </div>
