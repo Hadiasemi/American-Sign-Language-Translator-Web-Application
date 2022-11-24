@@ -5,7 +5,10 @@ from fastapi import FastAPI, Request, Form, Depends, UploadFile, File, HTTPExcep
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from schemas import AwesomeForm
+import keras
+import PIL.Image as Image
+import base64
+
 
 
 
@@ -49,18 +52,21 @@ def root(request: Request):
     
 
 @app.post('/ASL')
-def image_to_text(request: Request, file: UploadFile):
+async def image_to_text(request: Request, file: UploadFile = File(...)):
     print(file.filename)
     print(file.content_type)
     print(file.file)
     # model 
     # predection = model
     
-    pred = file.filename
+    file_content =  file.file.read()
+    bytes1 = base64.decode(file_content)
+    im = Image.open(io.BytesIO(bytes1))
+    print(im)
+   
     
-    
-    
-    return {"pred": pred}
+    print(file_content)
+    keras.models.load_model("./asl_cnn_saved_model")
 
 
 if __name__ == '__main__':
