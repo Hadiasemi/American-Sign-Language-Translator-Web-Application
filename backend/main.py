@@ -70,15 +70,19 @@ def root(request: Request):
 async def upload_file(file: UploadFile = File(...)):
 
     im = Image.open(file.file).convert("L")
-    print(type(im))
     img = np.array(im)
     
     img = resize(img, (28, 28))
-    img = img.flatten()
+    img = np.expand_dims(np.expand_dims(img, axis=0), axis=-1)
+    # from matplotlib import pyplot as plt
+    # plt.imshow(img, interpolation='nearest')
+    # plt.show()
+    # img = img.flatten()
     model = keras.models.load_model("./asl_cnn_saved_model")
-    pred = model.predict(img)
+    pred = model.predict([img])
     ind = np.argmax(pred)
-    return {"text", alpha[ind].upper()}
+    print(pred)
+    return {"text": alpha[ind].upper()}
 
 
    
