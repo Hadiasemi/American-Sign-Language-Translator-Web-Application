@@ -1,17 +1,17 @@
 import uvicorn
 import sqlite3
 import pandas as pd
-from fastapi import FastAPI, Request, Form, Depends, UploadFile, File, HTTPException
+from fastapi import FastAPI, Request, UploadFile, File, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import keras
 import PIL.Image as Image
-import base64
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import Body
+from skimage.transform import resize
+import numpy as np
 
-
+alpha = "abcdefghiklmnopqrstuvwxy"
 
 app = FastAPI()
 
@@ -62,36 +62,25 @@ async def data(dtype):
 def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-
-# @app.post('/', response_class = HTMLResponse)
-# def post_form(request: Request, file: UploadFile):
     
 
-@app.post('/ASL')
-async def image_to_text(request: Request, file: UploadFile = File(...)):
-    print(file.filename)
-    print(file.content_type)
-    print(file.file)
-    # model 
-    # predection = model
     
-    file_content =  file.file.read()
-    bytes1 = base64.decode(file_content)
-    im = Image.open(io.BytesIO(bytes1))
-    print(im)
-   
-    
-    print(file_content)
-    keras.models.load_model("./asl_cnn_saved_model")
 
 @app.post('/translate')
 async def upload_file(file: UploadFile = File(...)):
-    print("call reached !!!!!")
-    print(file)
-    return {'text': 'A'}
 
-async def main(request: Request): 
+    im = Image.open(file.file).convert("L")
+    print(type(im))
+    img = np.array(im)
+    
+    img = resize(img, (28, 28))
+    img = img.flatten()
+    model = keras.models.load_model("./asl_cnn_saved_model")
+    pred = model.predict(img)
+    ind = np.argmax(pred)
+    return {"text", alpha[ind].upper()}
+
+
    
-    return ''
 if __name__ == '__main__':
     uvicorn.run(app)
