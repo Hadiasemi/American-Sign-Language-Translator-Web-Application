@@ -1,0 +1,60 @@
+Ttype	backend/asl_cnn_saved_model/saved_model.pb	/^Ttype:	$/;"	l
+Ttype	backend/asl_cnn_saved_model/saved_model.pb	/^Ttype:$/;"	l
+	backend/asl_cnn_saved_model/saved_model.pb	/^:/;"	l
+shape	backend/asl_cnn_saved_model/saved_model.pb	/^shape:/;"	l
+shape	backend/asl_cnn_saved_model/saved_model.pb	/^shape:$/;"	l
+êÄ:Ä:	Ä::K:K:K:K:K2:2:2:2:2:::	backend/asl_cnn_saved_model/saved_model.pb	/^êÄ:Ä:	Ä::K:K:K:K:K2:2:2:2:2::::$/;"	l
+êÄ:Ä:	Ä:::::::::::K:K:K:K:K2:2:2:2:2:::	backend/asl_cnn_saved_model/saved_model.pb	/^êÄ:Ä:	Ä::/;"	l
+dense/BiasAdd/ReadVariableOpdense/BiasAdd/ReadVariableOp2	backend/asl_cnn_saved_model/saved_model.pb	/^dense\/BiasAdd\/ReadVariableOpdense\/BiasAdd\/ReadVariableOp2:$/;"	l
+assignvariableop_1_conv2d_bias:K	backend/asl_cnn_saved_model/saved_model.pb	/^assignvariableop_1_conv2d_bias:K:$/;"	l
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+"	backend/asl_cnn_saved_model/saved_model.pb	/^/;"	l
+(savev2_conv2d_1_bias_read_readvariableop	backend/asl_cnn_saved_model/saved_model.pb	/^(savev2_conv2d_1_bias_read_readvariableop:$/;"	l
+(savev2_conv2d_2_bias_read_readvariableop	backend/asl_cnn_saved_model/saved_model.pb	/^(savev2_conv2d_2_bias_read_readvariableop:$/;"	l
+CLUMPINESS_CONSTANT	video/nlp.py	/^CLUMPINESS_CONSTANT = 1.15 # How much should the algorithm try to favor parses that have fewer letters.$/;"	v
+CORSMiddleware	backend/main.py	/^from fastapi.middleware.cors import CORSMiddleware$/;"	i
+FREQ_WEIGHT	video/nlp.py	/^FREQ_WEIGHT = 0.2 # What is the maximum percent of the bonus given to the probability rating of a given parse based on it containing frequent words.$/;"	v
+FastAPI	backend/main.py	/^from fastapi import FastAPI, Request, UploadFile, File, HTTPException$/;"	i
+File	backend/main.py	/^from fastapi import FastAPI, Request, UploadFile, File, HTTPException$/;"	i
+HTMLResponse	backend/main.py	/^from fastapi.responses import HTMLResponse$/;"	i
+HTTPException	backend/main.py	/^from fastapi import FastAPI, Request, UploadFile, File, HTTPException$/;"	i
+Image	backend/main.py	/^import PIL.Image as Image$/;"	i
+Jinja2Templates	backend/main.py	/^from fastapi.templating import Jinja2Templates$/;"	i
+MAX_FREQ	video/nlp.py	/^MAX_FREQ = word_frequency('the', 'en')$/;"	v
+PIL	backend/main.py	/^import PIL.Image as Image$/;"	i
+Request	backend/main.py	/^from fastapi import FastAPI, Request, UploadFile, File, HTTPException$/;"	i
+StaticFiles	backend/main.py	/^from fastapi.staticfiles import StaticFiles$/;"	i
+UploadFile	backend/main.py	/^from fastapi import FastAPI, Request, UploadFile, File, HTTPException$/;"	i
+__inference__wrapped_model_15561å()*+89IJKLYZcdefyzàâ=¢	backend/asl_cnn_saved_model/saved_model.pb	/^ __inference__wrapped_model_15561å()*+89IJKLYZcdefyzàâ=¢:$/;"	l
+allow_credentials	backend/main.py	/^    allow_credentials=True,$/;"	v
+allow_headers	backend/main.py	/^    allow_headers=["*"],$/;"	v
+allow_methods	backend/main.py	/^    allow_methods=["*"],$/;"	v
+allow_origins	backend/main.py	/^    allow_origins=origins,$/;"	v
+alpha	backend/main.py	/^alpha = "abcdefghiklmnopqrstuvwxy"$/;"	v
+app	backend/main.py	/^app = FastAPI()$/;"	v
+chunk_letters	video/nlp.py	/^def chunk_letters(classifications):$/;"	f
+data	backend/main.py	/^async def data(dtype):$/;"	f
+itertools	video/nlp.py	/^import itertools$/;"	i
+keras	backend/main.py	/^import keras$/;"	i
+math	video/nlp.py	/^import math$/;"	i
+nltk	video/nlp.py	/^import nltk$/;"	i
+np	backend/main.py	/^import numpy as np$/;"	i
+origins	backend/main.py	/^origins = [$/;"	v
+partition	video/nlp.py	/^def partition(seq):$/;"	f
+pd	backend/main.py	/^import pandas as pd$/;"	i
+powerset	video/nlp.py	/^def powerset(iterable):$/;"	f
+print_most_likely	video/nlp.py	/^def print_most_likely(chunking):$/;"	f
+resize	backend/main.py	/^from skimage.transform import resize$/;"	i
+root	backend/main.py	/^def root(request: Request):$/;"	f
+sqlite3	backend/main.py	/^import sqlite3$/;"	i
+stitch	video/nlp.py	/^def stitch(classifications):$/;"	f
+templates	backend/main.py	/^templates = Jinja2Templates(directory=".")$/;"	v
+upload_file	backend/main.py	/^async def upload_file(file: UploadFile = File(...)):$/;"	f
+uvicorn	backend/main.py	/^import uvicorn$/;"	i
+word_frequency	video/nlp.py	/^from wordfreq import word_frequency$/;"	i
+Í::K:K:K:K:K:K:K2:2:2:2:2:2:2:::::	backend/asl_cnn_saved_model/saved_model.pb	/^Í:/;"	l
