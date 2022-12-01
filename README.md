@@ -5,7 +5,7 @@ This application converts different ASL hand signs to letters. It uses images an
 
 ## Model Overview
 
-We use a Convolutional Neural Network (CNN). It has 3 convolutional layers interspersed with batch normalization, max pooling, and dropout layers. Softmax layer is applied at the end to transform the output into a vector of probabilities for each letter.
+We use a Convolutional Neural Network (CNN) adapted from ![kaggle](https://www.kaggle.com/code/madz2000/cnn-using-keras-100-accuracy. It has 3 convolutional layers interspersed with batch normalization, max pooling, and dropout layers. Softmax layer is applied at the end to transform the output into a vector of probabilities for each letter.
 
 The code for the CNN can be found in the file named CSC_570_ASL_CNN.ipynb
 
